@@ -1,0 +1,163 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.valentines-screen {
+  background: linear-gradient(to right, pink, red);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.yes-button {
+  background-color: white;
+  color: red;
+  animation: heart-beat 1s infinite;
+}
+
+.no-button {
+  background-color: white;
+  color: red;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#response {
+  margin-top: 20px;
+  color: white;
+  font-size: 1.5em;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+.no-button.hide {
+  animation: slide-out 4s forwards;
+}
+
+.confetti, .heart {
+  position: fixed;
+  will-change: transform;
+  animation: falling 3s linear infinite;
+}
+
+@keyframes falling {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+.heart {
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  opacity: 0.75;
+}
+
+.heart:before, .heart:after {
+  content: '';
+  background-color: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+.heart:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 5px;
+}
+
+
+

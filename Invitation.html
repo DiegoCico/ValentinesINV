@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/styleINV.css">
+</head>
+<body>
+<div class="valentines-screen">
+  <p id="response" class="hidden">Not an option :)</p>
+  <p id="responseYes" class="hidden">I love you darling <3</p>
+
+  <h1>Will You Be My Valentine?</h1>
+  <div class="button-container">
+    <button class="yes-button">Yes</button>
+    <button class="no-button">No</button>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.no-button').addEventListener('click', function() {
+    var response = document.getElementById('response');
+    response.classList.remove('hidden');
+    response.classList.add('visible');
+    this.classList.add('hide');
+  });
+
+  function createConfetti() {
+    var confettiCount = 100;
+    var confetti = document.createDocumentFragment();
+
+    for (var i = 0; i < confettiCount; i++) {
+      var element = document.createElement('div');
+      element.className = i % 2 === 0 ? 'confetti' : 'heart';
+      element.style.left = Math.random() * 100 + 'vw';
+      element.style.animationDuration = Math.random() * 3 + 2 + 's';
+      element.style.animationDelay = Math.random() - 0.5 + 's';
+      confetti.appendChild(element);
+    }
+
+    document.body.appendChild(confetti);
+  }
+
+  document.querySelector('.yes-button').addEventListener('click', function() {
+    createConfetti();
+
+    var responseYes = document.getElementById('responseYes');
+    var response = document.getElementById('response');
+
+    responseYes.classList.remove('hidden');
+    responseYes.classList.add('visible');
+
+    // Hide the 'Not an option' text
+    response.classList.add('hidden');
+    response.classList.remove('visible');
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
