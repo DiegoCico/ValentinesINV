@@ -27,6 +27,22 @@
   <a href="invitation.html"><button class="open-button">Open</button></a>
 </div>
 
+<script>
+  document.querySelector('.open-button').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    var body = document.body;
+
+    // Apply the fade-out effect
+    body.classList.add('body-fade');
+
+    // After the animation ends, redirect to the new page
+    setTimeout(function() {
+      window.location.href = "Invitation.html";
+    }, 1000); // This should match the duration of the fadeOut animation
+  });
+</script>
+
+
 
 </body>
 

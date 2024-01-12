@@ -52,7 +52,32 @@
     response.classList.add('hidden');
     response.classList.remove('visible');
   });
+
+  document.querySelector('.no-button').addEventListener('mouseover', function() {
+    const maxX = window.innerWidth - this.offsetWidth;
+    const maxY = window.innerHeight - this.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    this.style.position = 'fixed';
+    this.style.left = randomX + 'px';
+    this.style.top = randomY + 'px';
+
+    // Display the 'Not an option' text
+    var response = document.getElementById('response');
+    response.classList.remove('hidden');
+    response.classList.add('visible');
+  });
+
 </script>
+
+<script>
+  window.onload = function() {
+    document.body.classList.add('body-fade-in');
+  };
+</script>
+
 
 
 

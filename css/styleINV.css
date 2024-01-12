@@ -45,6 +45,7 @@ button {
   background-color: white;
   color: red;
   animation: shake 0.5s infinite;
+  transition: top 0.3s, left 0.3s;
 }
 
 @keyframes heart-beat {
@@ -157,6 +158,24 @@ button:hover {
 .heart:after {
   top: 0;
   left: 5px;
+}
+
+.body-fade {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.body-fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 
